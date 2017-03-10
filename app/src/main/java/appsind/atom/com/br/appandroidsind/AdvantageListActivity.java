@@ -43,7 +43,8 @@ public class AdvantageListActivity extends AppCompatActivity {
                 } else {
                     List listAdvantage = response.body();
                     ArrayList<Advantages> advs = new ArrayList<Advantages>();
-                    Log.i("Content", "conteudo msg response"+response.message());
+                    String s = response.body().toString(); // criar um array a partir dessa string e depois jogar o array
+                    // no ArrayAdapter
 
                     for (int i=0; i < listAdvantage.size(); i++){
                         Advantages adv = (Advantages) listAdvantage.get(i);
