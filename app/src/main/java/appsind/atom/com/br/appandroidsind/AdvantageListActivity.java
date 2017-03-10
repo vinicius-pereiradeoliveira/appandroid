@@ -47,7 +47,7 @@ public class AdvantageListActivity extends AppCompatActivity {
 
                     for (int i=0; i < listAdvantage.size(); i++){
                         Advantages adv = (Advantages) listAdvantage.get(i);
-    
+
                         adv.getName();
                         adv.getDescription();
 
