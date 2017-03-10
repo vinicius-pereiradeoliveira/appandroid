@@ -5,5 +5,5 @@ App contains:
 
 - MainActivity with image and buttons for call others activities;
 - AdvantageListActivity with ListView for show data;
-- ListView consumes web service with Java + Spring providing the data via JSON;
+- AdvantageListActivity consumes web service with Java + Spring providing the data via JSON;
 
