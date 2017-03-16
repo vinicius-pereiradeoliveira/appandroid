@@ -2,15 +2,17 @@ package appsind.atom.com.br.appandroidsind.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by vinicius.oliveira on 08/03/2017.
  */
-
 public class Advantages {
 
-    @SerializedName("name")
+    public Long id;
+
     public String name;
-    @SerializedName("description")
+
     public String description;
 
     public String getName() {

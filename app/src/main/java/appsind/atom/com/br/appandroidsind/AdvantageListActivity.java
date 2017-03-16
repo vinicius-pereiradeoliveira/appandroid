@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import appsind.atom.com.br.appandroidsind.dto.ListAdvantageSync;
 import appsind.atom.com.br.appandroidsind.model.Advantages;
+import appsind.atom.com.br.appandroidsind.retrofit.RetrofitInicializador;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,44 +31,40 @@ public class AdvantageListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advantage_list);
+        final List list = new ArrayList<Advantages>();
+
         Retrofit retrofit = new Retrofit.Builder().baseUrl(AdvantageService.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         AdvantageService service = retrofit.create(AdvantageService.class);
-        Call<List<ListAdvantage>> requestListAdvantage = service.listAdvantages();
-        requestListAdvantage.enqueue(new Callback <List<ListAdvantage>>() {
+        Call<ListAdvantageSync> call = new RetrofitInicializador().getAdvantageService().listAdvantages();
+
+        call.enqueue(new Callback<ListAdvantageSync>() {
             @Override
-            public void onResponse(Call<List<ListAdvantage>> call, Response<List<ListAdvantage>> response) {
-                if(!response.isSuccessful()) {
-                    Log.i("TAG","Erro: "+response.code());
-                } else {
-                    List listAdvantage = response.body();
-                    ArrayList<Advantages> advs = new ArrayList<Advantages>();
-                    String s = response.body().toString(); // criar um array a partir dessa string e depois jogar o array
-                    // no ArrayAdapter
+            public void onResponse(Call<ListAdvantageSync> call, Response<ListAdvantageSync> response) {
+                ListAdvantageSync alunoSync = response.body();
+                ArrayList<Advantages> advantages = new ArrayList<Advantages>();
+                listView = (ListView) findViewById(R.id.listAdvantages);
 
-                    for (int i=0; i < listAdvantage.size(); i++){
-                        Advantages adv = (Advantages) listAdvantage.get(i);
-
-                        adv.getName();
-                        adv.getDescription();
-
-                        advs.add(adv);
-                    }
-
-                    listView = (ListView) findViewById(R.id.listAdvantages);
-
-                    ArrayAdapter<Advantages> adapter = new ArrayAdapter<Advantages>(AdvantageListActivity.this,
-                            android.R.layout.simple_list_item_1, advs);
-
-                    listView.setAdapter(adapter);
+                for (Advantages ad : alunoSync.getAdvantages()) {
+                    Log.i("id do aluno", String.valueOf(ad.getName()));
+                    Log.i("id do aluno", String.valueOf(ad.getDescription()));
+                    advantages.add(ad);
                 }
+
+                ArrayAdapter<Advantages> adapter = new ArrayAdapter<Advantages>(
+                        AdvantageListActivity.this,
+                        android.R.layout.simple_list_item_1,
+                        advantages
+                );
+
+                listView.setAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<List<ListAdvantage>> call, Throwable t) {
-                Log.e("TAG", "Error"+t.getMessage());
+            public void onFailure(Call<ListAdvantageSync> call, Throwable t) {
+                Log.e("onFailure chamado", t.getMessage());
             }
         });
     }
