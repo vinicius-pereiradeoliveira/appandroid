@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import appsind.atom.com.br.appandroidsind.adapter.AdapterListAdvantages;
 import appsind.atom.com.br.appandroidsind.dto.ListAdvantageSync;
 import appsind.atom.com.br.appandroidsind.model.Advantages;
 import appsind.atom.com.br.appandroidsind.retrofit.RetrofitInicializador;
@@ -48,16 +49,12 @@ public class AdvantageListActivity extends AppCompatActivity {
                 listView = (ListView) findViewById(R.id.listAdvantages);
 
                 for (Advantages ad : alunoSync.getAdvantages()) {
-                    Log.i("id do aluno", String.valueOf(ad.getName()));
-                    Log.i("id do aluno", String.valueOf(ad.getDescription()));
+                    Log.i("Name: ", String.valueOf(ad.getName()));
+                    Log.i("Description: ", String.valueOf(ad.getDescription()));
                     advantages.add(ad);
                 }
 
-                ArrayAdapter<Advantages> adapter = new ArrayAdapter<Advantages>(
-                        AdvantageListActivity.this,
-                        android.R.layout.simple_list_item_1,
-                        advantages
-                );
+                AdapterListAdvantages adapter = new AdapterListAdvantages(AdvantageListActivity.this, advantages);
 
                 listView.setAdapter(adapter);
             }
