@@ -1,6 +1,8 @@
 package appsind.atom.com.br.appandroidsind.retrofit;
 
 import appsind.atom.com.br.appandroidsind.AdvantageService;
+import appsind.atom.com.br.appandroidsind.CampaignService;
+import appsind.atom.com.br.appandroidsind.NewService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -31,5 +33,13 @@ public class RetrofitInicializador {
 
     public AdvantageService getAdvantageService() {
         return retrofit.create(AdvantageService.class);
+    }
+
+    public NewService getNewService() {
+        return retrofit.create(NewService.class);
+    }
+
+    public CampaignService getCampaignService() {
+        return retrofit.create(CampaignService.class);
     }
 }
