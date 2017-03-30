@@ -39,7 +39,8 @@
         android:layout_marginTop="26dp"
         android:id="@+id/button2"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="getCampaign" />
 
     <Button
         android:text="Notícias "
@@ -49,6 +50,7 @@
         android:id="@+id/button3"
         android:layout_below="@+id/button2"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="getNews" />
 
 </RelativeLayout>

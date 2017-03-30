@@ -10,7 +10,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import appsind.atom.com.br.appandroidsind.R;
-import appsind.atom.com.br.appandroidsind.model.Campaign;
 import appsind.atom.com.br.appandroidsind.model.News;
 
 /**
@@ -51,7 +50,7 @@ public class AdapterListNews extends BaseAdapter{
 
         View view = convertView;
         if (view == null) {
-            view = inflater.inflate(R.layout.advantage_list_items, parent, false);
+            view = inflater.inflate(R.layout.news_list_items, parent, false);
         }
 
         //pegando as referências das Views

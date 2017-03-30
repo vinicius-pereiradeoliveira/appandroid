@@ -10,7 +10,7 @@ import retrofit2.http.GET;
  */
 
 public interface NewService {
-    public static final String BASE_URL = "http://10.0.2.2:8081/";
+    public static final String BASE_URL = "http://10.0.2.2:8082/";
 
     @GET("api/news")
     Call<ListNewSync> listNews();

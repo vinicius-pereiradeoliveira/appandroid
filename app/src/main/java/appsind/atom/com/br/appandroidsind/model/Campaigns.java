@@ -4,7 +4,7 @@ package appsind.atom.com.br.appandroidsind.model;
  * Created by vinicius.oliveira on 30/03/2017.
  */
 
-public class Campaign {
+public class Campaigns {
 
     public Long id;
 

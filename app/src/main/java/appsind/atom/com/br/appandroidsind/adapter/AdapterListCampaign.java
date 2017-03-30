@@ -10,18 +10,17 @@ import android.widget.TextView;
 import java.util.List;
 
 import appsind.atom.com.br.appandroidsind.R;
-import appsind.atom.com.br.appandroidsind.model.Advantages;
-import appsind.atom.com.br.appandroidsind.model.Campaign;
+import appsind.atom.com.br.appandroidsind.model.Campaigns;
 
 /**
  * Created by vinicius.oliveira on 30/03/2017.
  */
 
 public class AdapterListCampaign extends BaseAdapter {
-    private final List<Campaign> campaigns;
+    private final List<Campaigns> campaigns;
     private final Context context;
 
-    public AdapterListCampaign(Context context, List<Campaign> campaigns) {
+    public AdapterListCampaign(Context context, List<Campaigns> campaigns) {
         this.context = context;
         this.campaigns = campaigns;
     }
@@ -45,13 +44,13 @@ public class AdapterListCampaign extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Campaign camp = campaigns.get(position);
+        Campaigns camp = campaigns.get(position);
 
         LayoutInflater inflater = LayoutInflater.from(context);
 
         View view = convertView;
         if (view == null) {
-            view = inflater.inflate(R.layout.advantage_list_items, parent, false);
+            view = inflater.inflate(R.layout.campaign_list_items, parent, false);
         }
 
         //pegando as referências das Views

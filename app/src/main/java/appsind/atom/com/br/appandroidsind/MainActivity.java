@@ -18,9 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void getAdvantages(View view) {
         Intent intent = new Intent(this, AdvantageListActivity.class);
-        //EditText editText = (EditText) findViewById(R.id.edit_message);
-        //String message = editText.getText().toString();
-        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+    public void getNews(View view) {
+        Intent intent = new Intent(this, NewsListActivity.class);
+        startActivity(intent);
+    }
+
+    public void getCampaign(View view) {
+        Intent intent = new Intent(this, CampaignListActivity.class);
         startActivity(intent);
     }
 }

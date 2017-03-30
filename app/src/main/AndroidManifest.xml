@@ -17,7 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdvantageListActivity"></activity>
+        <activity android:name=".AdvantageListActivity" />
+        <activity android:name=".NewsListActivity" />
+        <activity android:name=".CampaignListActivity"></activity>
     </application>
 
 </manifest>

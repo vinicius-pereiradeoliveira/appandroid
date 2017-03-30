@@ -26,7 +26,7 @@ import static android.R.id.list;
 
 public class AdvantageListActivity extends AppCompatActivity {
 
-    ListView listView ;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
