@@ -10,7 +10,7 @@ import retrofit2.http.GET;
  */
 
 public interface CampaignService {
-    public static final String BASE_URL = "http://10.0.2.2:8082/";
+    public static final String BASE_URL = "https://apirest-sind.herokuapp.com/";
 
     @GET("api/campaign")
     Call<ListCampaignSync> listCampaign();
