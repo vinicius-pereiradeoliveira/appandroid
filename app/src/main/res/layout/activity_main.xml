@@ -32,7 +32,7 @@
         android:onClick="getAdvantages"/>
 
     <Button
-        android:text="Campanhas Sindicais"
+        android:text="Notícias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button"
@@ -40,10 +40,10 @@
         android:id="@+id/button2"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:onClick="getCampaign" />
+        android:onClick="getNews" />
 
     <Button
-        android:text="Notícias "
+        android:text="Informações"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -51,6 +51,6 @@
         android:layout_below="@+id/button2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:onClick="getNews" />
+        android:onClick="getInformation" />
 
 </RelativeLayout>

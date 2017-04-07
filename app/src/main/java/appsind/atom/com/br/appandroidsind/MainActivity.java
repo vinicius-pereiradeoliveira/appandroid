@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void getCampaign(View view) {
-        Intent intent = new Intent(this, CampaignListActivity.class);
+    public void getInformation(View view) {
+        Intent intent = new Intent(this, InformationActivity.class);
         startActivity(intent);
     }
 }
