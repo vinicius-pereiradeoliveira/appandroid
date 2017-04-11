@@ -26,4 +26,9 @@ public class InformationActivity extends AppCompatActivity {
         intent.setData(Uri.parse("geo:0,0?q=Rua Apolinário de Moraes, 950 - Centro, Montenegro-RS"));
         startActivity(intent);
     }
+
+    public void getInformation(View view) {
+        Intent intent = new Intent(this, InformationActivity.class);
+        startActivity(intent);
+    }
 }

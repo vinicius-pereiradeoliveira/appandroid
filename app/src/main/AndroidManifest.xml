@@ -20,7 +20,8 @@
         <activity android:name=".AdvantageListActivity" />
         <activity android:name=".NewsListActivity" />
         <activity android:name=".CampaignListActivity" />
-        <activity android:name=".InformationActivity"></activity>
+        <activity android:name=".InformationActivity" />
+        <activity android:name=".AcceptActivity"></activity>
     </application>
 
 </manifest>
