@@ -1,12 +1,13 @@
 package appsind.atom.com.br.appandroidsind;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
-import appsind.atom.com.br.appandroidsind.R;
 
 public class InformationActivity extends AppCompatActivity {
 
@@ -17,8 +18,14 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     public void getPhone(View view) {
-        Intent intent = new Intent(this, InformationActivity.class);
-        startActivity(intent);
+
+        if (ActivityCompat.checkSelfPermission(InformationActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(InformationActivity.this,
+                    new String[]{Manifest.permission.CALL_PHONE}, 123);
+        } else {
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:05136324838"));
+            startActivity(intent);
+        }
     }
 
     public void getMap(View view) {
@@ -27,8 +34,9 @@ public class InformationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void getInformation(View view) {
-        Intent intent = new Intent(this, InformationActivity.class);
+    public void getSociety(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://apirest-sind.herokuapp.com/contract"));// localhost: http://10.99.4.55:8082
         startActivity(intent);
     }
 }

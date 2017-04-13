@@ -92,7 +92,8 @@
         android:id="@+id/imageButton"
         android:layout_marginTop="26dp"
         android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="getPhone"/>
 
     <ImageButton
         android:layout_width="wrap_content"
