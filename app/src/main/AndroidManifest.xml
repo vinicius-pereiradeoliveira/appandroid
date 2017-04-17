@@ -17,6 +17,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,6 +25,8 @@
         <activity android:name=".NewsListActivity" />
         <activity android:name=".CampaignListActivity" />
         <activity android:name=".InformationActivity" />
+        <activity android:name=".ContractActivity" />
+        <activity android:name=".FormPartnerActivity"></activity>
     </application>
 
 </manifest>

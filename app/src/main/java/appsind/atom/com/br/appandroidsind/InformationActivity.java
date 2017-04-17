@@ -34,9 +34,14 @@ public class InformationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void getSociety(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("https://apirest-sind.herokuapp.com/contract"));// localhost: http://10.99.4.55:8082
+    //public void getSociety(View view) {
+    //    Intent intent = new Intent(Intent.ACTION_VIEW);
+    //    intent.setData(Uri.parse("https://apirest-sind.herokuapp.com/contract"));// localhost: http://10.99.4.55:8082
+    //    startActivity(intent);
+    //}
+
+    public void getContract(View view) {
+        Intent intent = new Intent(this, ContractActivity.class);
         startActivity(intent);
     }
 }
