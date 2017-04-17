@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.math.BigInteger;
+
 import appsind.atom.com.br.appandroidsind.model.Partner;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,7 +35,7 @@ public class FormPartnerActivity extends AppCompatActivity {
         createPartnerButton.setOnClickListener((view) -> {
             Partner partner = new Partner(
                     name.getText().toString(),
-                    Integer.parseInt(cpf.getText().toString()),
+                    cpf.getText().toString(),
                     celular.getText().toString(),
                     empresa.getText().toString(),
                     dt_nascimento.getText().toString(),
@@ -72,6 +74,8 @@ public class FormPartnerActivity extends AppCompatActivity {
             }
         });
 
+        Intent intent = new Intent(this, MainActivity.class);
+
         Context context = getApplicationContext();
         CharSequence text = "Voce agora faz parte dos associados do Sindicato!";
         int duration = Toast.LENGTH_SHORT;
@@ -79,7 +83,7 @@ public class FormPartnerActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
 
-        finish();
+        startActivity(intent);
     }
 
 
