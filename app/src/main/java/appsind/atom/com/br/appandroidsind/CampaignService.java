@@ -10,7 +10,7 @@ import retrofit2.http.GET;
  */
 
 public interface CampaignService {
-    public static final String BASE_URL = "162.243.245.197:8082/";
+    public static final String BASE_URL = "http://162.243.245.197:8082/";
 
     @GET("api/campaign")
     Call<ListCampaignSync> listCampaign();

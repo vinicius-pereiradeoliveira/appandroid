@@ -49,7 +49,7 @@ public class FormPartnerActivity extends AppCompatActivity {
 
     private void sendNetworkPostRequest(Partner partner) {
         Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("162.243.245.197:8082/")
+                .baseUrl("http://162.243.245.197:8082/")
                 .addConverterFactory(GsonConverterFactory.create());
 
         Retrofit retrofit = builder.build();
