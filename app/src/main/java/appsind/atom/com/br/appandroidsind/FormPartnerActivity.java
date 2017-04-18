@@ -49,7 +49,7 @@ public class FormPartnerActivity extends AppCompatActivity {
 
     private void sendNetworkPostRequest(Partner partner) {
         Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("https://apirest-sind.herokuapp.com/")
+                .baseUrl("162.243.245.197:8082/")
                 .addConverterFactory(GsonConverterFactory.create());
 
         Retrofit retrofit = builder.build();

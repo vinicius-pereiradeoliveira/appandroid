@@ -10,7 +10,7 @@ import retrofit2.http.GET;
  */
 
 public interface NewService {
-    public static final String BASE_URL = "https://apirest-sind.herokuapp.com/";
+    public static final String BASE_URL = "162.243.245.197:8082/";
 
     @GET("api/news")
     Call<ListNewSync> listNews();

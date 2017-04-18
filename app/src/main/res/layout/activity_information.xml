@@ -65,7 +65,7 @@
         android:layout_marginTop="29dp" />
 
     <TextView
-        android:text="R. Apolinário de Moraes, 950 - Centro, Montenegro-RS"
+        android:text="Apolinário de Moraes, 950 - Centro, Montenegro-RS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
