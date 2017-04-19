@@ -25,7 +25,7 @@ public class RetrofitInicializador {
         client.addInterceptor(interceptor);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://apirest-sind.herokuapp.com/")
+                .baseUrl("http://162.243.245.197:8082/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .client(client.build())
                 .build();

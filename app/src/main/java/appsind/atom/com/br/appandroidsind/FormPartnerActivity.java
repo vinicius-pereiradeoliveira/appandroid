@@ -57,33 +57,34 @@ public class FormPartnerActivity extends AppCompatActivity {
         PartnerService partnerService = retrofit.create(PartnerService.class);
         Call<Partner> call = partnerService.createPartner(partner);
 
+        Intent intent = new Intent(this, MainActivity.class);
+
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
+                Context context = getApplicationContext();
+                CharSequence text = "Voce agora faz parte dos associados do Sindicato!";
+                int duration = Toast.LENGTH_LONG;
 
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+
+                startActivity(intent);
             }
 
             @Override
             public void onFailure(Call call, Throwable t) {
                 Context context = getApplicationContext();
                 CharSequence text = "Ocorreu um erro de acesso com a internet ou servidor! Tente novamente mais tarde!";
-                int duration = Toast.LENGTH_SHORT;
+                int duration = Toast.LENGTH_LONG;
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+
+                startActivity(intent);
             }
         });
 
-        Intent intent = new Intent(this, MainActivity.class);
-
-        Context context = getApplicationContext();
-        CharSequence text = "Voce agora faz parte dos associados do Sindicato!";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
-        startActivity(intent);
     }
 
 

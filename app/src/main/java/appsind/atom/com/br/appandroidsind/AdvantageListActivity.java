@@ -49,8 +49,6 @@ public class AdvantageListActivity extends AppCompatActivity {
                 listView = (ListView) findViewById(R.id.listAdvantages);
 
                 for (Advantages ad : alunoSync.getAdvantages()) {
-                    Log.i("Name: ", String.valueOf(ad.getName()));
-                    Log.i("Description: ", String.valueOf(ad.getDescription()));
                     advantages.add(ad);
                 }
 
